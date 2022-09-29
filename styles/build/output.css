@@ -5,6 +5,19 @@
 *
 */
 /**
+*
+* @block Font
+*
+*/
+@font-face {
+  font-family: "Bandeins-Strange";
+  src: url("/fonts/Bandeins-Strange-Variable.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Clash-Display";
+  src: url("/fonts/ClashDisplay-Variable.ttf") format("truetype");
+}
+/**
 * _mixins.scss
 *
 * Mixins useful for the site.
@@ -24,6 +37,12 @@
 /*-----------------------------------*/
 /*  @block Sections
 /*-----------------------------------*/
+main section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
 /**
 * _basic-tags.scss
 *
@@ -54,10 +73,76 @@ html::-webkit-scrollbar {
 }
 html body {
   font-size: 16px;
+  font-family: "Bandeins-Strange", sans-serif;
   width: 100%;
   background-color: rgb(15, 14, 14);
   color: rgb(246, 244, 244);
   cursor: default;
+}
+
+/**
+* _header-footer.scss
+*
+* Header and Footer partial for the site.
+*/
+/*-----------------------------------*/
+/*  @block Header
+/*-----------------------------------*/
+header {
+  font-family: "Clash-Display", sans-serif;
+  position: fixed;
+  z-index: 100;
+  outline: 1px solid red;
+  width: 70%;
+  margin: 0% 15%;
+  padding: 1% 0%;
+  text-align: right;
+}
+header span:nth-child(2) {
+  padding: 0% 5%;
+}
+
+/*-----------------------------------*/
+/*  @block Footer
+/*-----------------------------------*/
+main {
+  padding-top: 3.4%;
+  height: 99.6vh;
+}
+main #home {
+  outline: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+main #home div {
+  height: 100%;
+}
+main #home div:nth-of-type(2) {
+  width: 70%;
+}
+main #home div:nth-of-type(1),
+main #home div:nth-of-type(3) {
+  outline: 1px solid red;
+  width: 15%;
+}
+main #home div h1 {
+  font-size: 5rem;
+  text-align: justify;
+  letter-spacing: 30px;
+  text-transform: lowercase;
+  word-wrap: break-word;
+}
+main #home div h1 i {
+  font-style: normal;
+  letter-spacing: 52px;
+}
+main #home div:nth-of-type(1) p:nth-child(2) {
+  rotate: 90deg;
+  text-align: center;
 }
 
 /*# sourceMappingURL=output.css.map */

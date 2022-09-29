@@ -12,6 +12,17 @@
 /*  @block Header
 /*-----------------------------------*/
 header {
+  font-family: "Clash-Display", sans-serif;
+  position: fixed;
+  z-index: 100;
+  outline: variables.$outline-test;
+  width: 70%;
+  margin: 0% 15%;
+  padding: 1% 0%;
+  text-align: right;
+  span:nth-child(2) {
+    padding: 0% 5%;
+  }
 }
 /*-----------------------------------*/
 /*  @block Footer

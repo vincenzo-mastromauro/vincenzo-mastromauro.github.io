@@ -2,4 +2,44 @@
 @use "../styles/partials/mixins";
 @use "../styles/partials/extends";
 @use "../styles/partials/basic-tags";
+@use "../styles/partials/header-footer";
 // @use "../styles/partials/keyframes";
+
+main {
+  padding-top: 3.4%;
+  height: 99.6vh;
+
+  section {
+    @extend %sectionSize;
+  }
+  #home {
+    outline: variables.$outline-test;
+    @include mixins.flexbox(0);
+    div {
+      height: 100%;
+    }
+    div:nth-of-type(2) {
+      width: 70%;
+    }
+    div:nth-of-type(1),
+    div:nth-of-type(3) {
+      outline: variables.$outline-test;
+      width: 15%;
+    }
+    div h1 {
+      font-size: 5rem;
+      text-align: justify;
+      letter-spacing: 30px;
+      text-transform: lowercase;
+      word-wrap: break-word;
+      i {
+        font-style: normal;
+        letter-spacing: 52px;
+      }
+    }
+    div:nth-of-type(1) p:nth-child(2) {
+      rotate: 90deg;
+      text-align: center;
+    }
+  }
+}

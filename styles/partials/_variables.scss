@@ -11,3 +11,17 @@ $color-secondary: rgb(216, 98, 17);
 $custom-border-radius: 100px;
 // TO DELETE
 $outline-test: 1px solid red;
+
+/**
+*
+* @block Font
+*
+*/
+@font-face {
+  font-family: "Bandeins-Strange";
+  src: url("/fonts/Bandeins-Strange-Variable.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Clash-Display";
+  src: url("/fonts/ClashDisplay-Variable.ttf") format("truetype");
+}

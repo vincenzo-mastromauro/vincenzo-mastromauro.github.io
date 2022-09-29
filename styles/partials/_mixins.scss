@@ -60,9 +60,9 @@
 /*-----------------------------------*/
 
 @mixin flexbox(
+  $gap: 2%,
   $justifyContent: center,
   $alignItems: center,
-  $gap: 2%,
   $flexDirection: row
 ) {
   display: flex;
