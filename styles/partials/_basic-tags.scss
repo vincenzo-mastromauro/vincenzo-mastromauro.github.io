@@ -1,0 +1,38 @@
+/**
+* _basic-tags.scss
+*
+* Partials for basic tags that repeat 
+* throughout the site.
+*
+*/
+@use "../partials/variables";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  image-rendering: auto;
+  shape-rendering: geometricPrecision;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    font-size: 16px;
+    // font-family: "Sora", sans-serif;
+    width: 100%;
+    background-color: variables.$color-background;
+    color: variables.$color-primary;
+
+    cursor: default;
+  }
+}
