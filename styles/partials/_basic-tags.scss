@@ -6,6 +6,7 @@
 *
 */
 @use "../partials/variables";
+@use "../partials/keyframes";
 
 *,
 *::after,
@@ -35,6 +36,18 @@ html {
     width: 100%;
     background-color: variables.$color-background;
     color: variables.$color-primary;
-    cursor: default;
+    background-repeat: repeat;
+    opacity: 1;
+    &::after {
+      animation: grain 8s steps(10) infinite;
+      background-image: url("/images/noise.png");
+      content: "";
+      height: 300%;
+      left: -50%;
+      opacity: 0.3;
+      position: fixed;
+      top: -100%;
+      width: 300%;
+    }
   }
 }
