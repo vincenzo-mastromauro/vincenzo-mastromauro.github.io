@@ -9,13 +9,16 @@
 @use "../partials/keyframes";
 
 *,
-*::after,
-*::before {
+*::before,
+*::after {
+  outline: variables.$outline-test;
+}
+html,
+body {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  overflow-x: hidden;
 }
-
 html {
   box-sizing: border-box;
   overflow-x: hidden;
@@ -29,22 +32,21 @@ html {
   &::-webkit-scrollbar {
     display: none;
   }
-
   body {
+    font-family: "Clash-Display", sans-serif;
     font-size: 16px;
-    font-family: "Bandeins-Strange", sans-serif;
-    width: 100%;
     background-color: variables.$color-background;
     color: variables.$color-primary;
     background-repeat: repeat;
     opacity: 1;
+    word-wrap: break-word;
     &::after {
       animation: grain 8s steps(10) infinite;
       background-image: url("/images/noise.png");
       content: "";
       height: 300%;
       left: -50%;
-      opacity: 0.3;
+      opacity: 1;
       position: fixed;
       top: -100%;
       width: 300%;
