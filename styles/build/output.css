@@ -10,12 +10,34 @@
 *
 */
 @font-face {
-  font-family: "Bandeins-Strange";
-  src: url("/fonts/Bandeins-Strange-Variable.ttf") format("truetype");
+  font-family: "Clash-Display";
+  src: url("/fonts/ClashDisplay-Extralight.otf") format("opentype");
+  font-weight: 200;
 }
 @font-face {
   font-family: "Clash-Display";
-  src: url("/fonts/ClashDisplay-Variable.ttf") format("truetype");
+  src: url("/fonts/ClashDisplay-Light.otf") format("opentype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Clash-Display";
+  src: url("/fonts/ClashDisplay-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Clash-Display";
+  src: url("/fonts/ClashDisplay-Medium.otf") format("opentype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Clash-Display";
+  src: url("/fonts/ClashDisplay-Semibold.otf") format("opentype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Clash-Display";
+  src: url("/fonts/ClashDisplay-Bold.otf") format("opentype");
+  font-weight: 700;
 }
 /**
 * _mixins.scss
@@ -69,6 +91,17 @@
     transform: translate(-10%, 10%);
   }
 }
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /**
 * _basic-tags.scss
 *
@@ -76,10 +109,26 @@
 * throughout the site.
 *
 */
+:root {
+  --windowHeight: calc(100vh / 1);
+  --windowWidth: calc(100vw / 1);
+}
+
+html {
+  box-sizing: border-box;
+}
+
 *,
 *::before,
 *::after {
-  outline: 1px solid red;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  outline: 1px solid rgba(255, 0, 0, 0);
+}
+
+* {
+  z-index: 1000;
 }
 
 html,
@@ -105,6 +154,7 @@ html::-webkit-scrollbar {
 html body {
   font-family: "Clash-Display", sans-serif;
   font-size: 16px;
+  font-weight: 400;
   background-color: rgb(15, 14, 14);
   color: rgb(246, 244, 244);
   background-repeat: repeat;
@@ -122,76 +172,404 @@ html body::after {
   top: -100%;
   width: 300%;
 }
-
-header {
-  font-family: "Clash-Display", sans-serif;
-  position: fixed;
-  width: 80%;
-  margin: 0 10%;
-  z-index: 100;
+html body i {
+  font-style: normal;
+  color: rgb(216, 98, 17);
 }
-header div {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-header div a {
-  padding: 6px 0px;
-  color: rgb(246, 244, 244);
+html body a {
   text-decoration: none;
-  font-weight: 200;
-  letter-spacing: 1.2px;
+  color: rgb(246, 244, 244);
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1px 1px 1px;
+  width: calc(var(--windowWidth) * 4);
+  display: flex;
+  flex-wrap: no-wrap;
 }
 .container .panel {
   position: relative;
-  width: calc(100vw - 4rem);
-  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--windowWidth);
+  flex: 0 0 var(--windowWidth);
+  height: var(--windowHeight);
+}
+.container .pagination {
+  position: absolute;
+  bottom: 6%;
+  left: 7%;
+  font-size: 2.5rem;
+  filter: blur(1px);
 }
 .container .p1 {
-  height: calc(100vh - 4rem);
-  grid-column: 1/2;
-  grid-row: 1/2;
+  height: calc(var(--windowHeight) * 1);
 }
-.container .p1 p {
-  font-size: 0.7rem;
-  text-align: justify;
+.container .p1 .panelContentContainer {
+  height: 100%;
+  padding: 0 8%;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+}
+.container .p1 .panelContentContainer p {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  gap: 0;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 200;
+  width: 100%;
+}
+.container .p1 .panelContentContainer p img {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+.container .p1 .panelContentContainer h1 {
+  font-size: 3rem;
+  text-align: justify;
+  text-transform: lowercase;
+  font-weight: 500;
+  line-height: 1.5em;
+}
+.container .p1 .panelContentContainer h1 i:nth-of-type(2) {
+  font-size: 2.785rem;
+}
+.container .p1 .panelContentContainer .callToAction {
+  font-size: 1rem;
+  display: flex;
+  text-align: end;
+}
+.container .p1 .panelContentContainer .callToAction span {
+  padding-right: 10px;
+  letter-spacing: 1px;
+}
+.container .p1 .panelContentContainer a {
+  text-decoration: none;
+  color: rgb(216, 98, 17);
+  font-size: 1.5rem;
   font-weight: 200;
   letter-spacing: 1.2px;
+  text-transform: uppercase;
 }
-.container .p1 h1 {
-  font-size: 2rem;
-  letter-spacing: 1vw;
-  text-align: justify;
-  line-height: 9vh;
-  font-weight: 400;
-}
-.container .p1 h1 span:nth-child(1) {
-  letter-spacing: 1.14vw;
-}
-.container .p1 h1 span:nth-child(2) {
-  letter-spacing: 0.9vw;
+.container .p1 .panelContentContainer a:hover {
+  cursor: pointer;
 }
 .container .p2 {
-  grid-column: 2/3;
-  grid-row: 1/3;
+  height: calc(var(--windowHeight) * 2.5);
+  margin-top: calc(var(--windowHeight) * 1 - var(--windowHeight));
+}
+.container .p2 .panelContentContainer {
+  height: 100%;
+  padding: 0 8%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.container .p2 .panelContentContainer .hero {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+}
+.container .p2 .panelContentContainer .hero h2 {
+  font-size: 2.3rem;
+  text-align: justify;
+  text-transform: lowercase;
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: 1.2px;
+  margin-bottom: 2%;
+}
+.container .p2 .panelContentContainer .hero h2 i:nth-of-type(2) {
+  margin-left: 7.9%;
+}
+.container .p2 .panelContentContainer .hero img {
+  margin-top: 5%;
+  transform: rotate(90deg);
+}
+.container .p2 .panelContentContainer .projectWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.container .p2 .panelContentContainer .projectWrapper .project {
+  margin: 10% 0;
+}
+.container .p2 .panelContentContainer .projectWrapper .project p:nth-child(1) {
+  font-weight: 200;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+}
+.container .p2 .panelContentContainer .projectWrapper .project h3 {
+  font-size: 2.6rem;
+  text-align: start;
+  font-weight: 600;
+  line-height: 1.7em;
+  letter-spacing: 2.5px;
+}
+.container .p2 .panelContentContainer .projectWrapper .project h3 a {
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke: 1px rgb(216, 98, 17);
+}
+.container .p2 .panelContentContainer .projectWrapper .project h3 a:hover {
+  cursor: pointer;
+}
+.container .p2 .panelContentContainer .projectWrapper .project p:nth-child(3) {
+  font-size: 0.8rem;
+  font-weight: 200;
+  line-height: 1.5em;
+  letter-spacing: 2px;
+  margin-bottom: 5%;
+}
+.container .p2 .panelContentContainer .projectWrapper .project p:nth-child(4) {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.2em;
+  letter-spacing: 2px;
+}
+.container .p2 .panelContentContainer .projectWrapper .project.left {
+  align-self: flex-start;
+  text-align: start;
+}
+.container .p2 .panelContentContainer .projectWrapper .project.right {
+  align-self: flex-end;
+  text-align: end;
 }
 .container .p3 {
-  grid-column: 3/4;
-  grid-row: 2/4;
-  margin-top: -100vh;
+  height: calc(var(--windowHeight) * 2);
+  margin-top: calc(var(--windowHeight) * 2.5 - var(--windowHeight));
+}
+.container .p3 .panelContentContainer {
+  height: 100%;
+  padding: 0 8%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.container .p3 .panelContentContainer .hero,
+.container .p3 .panelContentContainer .subHero {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+}
+.container .p3 .panelContentContainer .hero h2,
+.container .p3 .panelContentContainer .subHero h2 {
+  font-size: 2.3rem;
+  text-align: justify;
+  text-transform: lowercase;
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: 1.2px;
+  margin-bottom: 2%;
+}
+.container .p3 .panelContentContainer .hero h2 i:nth-of-type(2),
+.container .p3 .panelContentContainer .subHero h2 i:nth-of-type(2) {
+  margin: 23.6%;
+}
+.container .p3 .panelContentContainer .hero img,
+.container .p3 .panelContentContainer .subHero img {
+  margin-top: 5%;
+  transform: rotate(90deg);
+}
+.container .p3 .panelContentContainer .subHero p {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.2em;
+  letter-spacing: 2px;
+}
+.container .p3 .panelContentContainer .subHero p:nth-of-type(2) {
+  text-align: end;
+}
+.container .p3 .panelContentContainer .subHero p span {
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke: 1px rgb(216, 98, 17);
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+.container .p3 .panelContentContainer .adjectives {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  margin-top: 5%;
+}
+.container .p3 .panelContentContainer .adjectives p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.2em;
+  letter-spacing: 2px;
+  text-align: justify;
+}
+.container .p3 .panelContentContainer .adjectives p span {
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke: 1px rgb(216, 98, 17);
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+.container .p3 .panelContentContainer .education h3,
+.container .p3 .panelContentContainer .hardSkills h3 {
+  font-size: 1.9rem;
+  text-align: start;
+  font-weight: 600;
+  line-height: 1.7em;
+  letter-spacing: 2.5px;
+  margin-bottom: 9%;
+}
+.container .p3 .panelContentContainer .education h3 p,
+.container .p3 .panelContentContainer .hardSkills h3 p {
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke: 1px rgb(216, 98, 17);
+}
+.container .p3 .panelContentContainer .education h3 p:hover,
+.container .p3 .panelContentContainer .hardSkills h3 p:hover {
+  cursor: pointer;
+}
+.container .p3 .panelContentContainer .education span,
+.container .p3 .panelContentContainer .hardSkills span {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5em;
+  letter-spacing: 2px;
+  text-align: justify;
+}
+.container .p3 .panelContentContainer .education span p,
+.container .p3 .panelContentContainer .hardSkills span p {
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke: 1px rgb(216, 98, 17);
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+.container .p3 .panelContentContainer .education .ed1,
+.container .p3 .panelContentContainer .hardSkills .ed1 {
+  margin-bottom: 7%;
+  text-align: start;
+}
+.container .p3 .panelContentContainer .education .ed1,
+.container .p3 .panelContentContainer .hardSkills .ed1 {
+  text-align: end;
+}
+.container .p3 .panelContentContainer .hardSkills h3 {
+  text-align: end;
+}
+.container .p3 .panelContentContainer .hardSkills .skillsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0;
+  width: 100%;
+  text-align: justify;
+  margin-top: 5%;
+}
+.container .p3 .panelContentContainer .hardSkills .skillsWrapper .hardSkills {
+  width: 50%;
+}
+.container .p3 .panelContentContainer .hardSkills .skillsWrapper .softSkills {
+  width: 50%;
 }
 .container .p4 {
-  grid-column: 4/5;
-  grid-row: 2/4;
-  margin-top: -100vh;
+  height: calc(var(--windowHeight) * 1);
+  margin-top: calc(var(--windowHeight) * 3.5 - var(--windowHeight));
+}
+.container .p4 .panelContentContainer {
+  height: 100%;
+  padding: 0 8%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.container .p4 .panelContentContainer .hero {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+}
+.container .p4 .panelContentContainer .hero h2 {
+  font-size: 2.3rem;
+  text-align: justify;
+  text-transform: lowercase;
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: 0.25em;
+  margin-bottom: 2%;
+}
+.container .p4 .panelContentContainer .hero h2 i {
+  letter-spacing: 0.53em;
+}
+.container .p4 .panelContentContainer .hero img {
+  margin-top: 5%;
+  transform: rotate(90deg);
+}
+.container .p4 .panelContentContainer a {
+  font-weight: 300;
+  line-height: 1.2em;
+  letter-spacing: 2px;
+  text-align: justify;
+  color: rgb(216, 98, 17);
+}
+.container .p4 .panelContentContainer .socials {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  margin-top: 5%;
+}
+.container .p4 .panelContentContainer .socials a {
+  color: rgb(246, 244, 244);
+}
+
+.top {
+  position: absolute;
+  left: calc(var(--windowWidth) / 20);
+  top: calc(var(--windowHeight) / 20);
+}
+
+.bottom {
+  position: absolute;
+  left: calc(var(--windowWidth) / 20);
+  bottom: calc(var(--windowHeight) / 20);
+}
+
+.visible {
+  color: rgb(216, 98, 17) !important;
+  transition: all 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 /*# sourceMappingURL=output.css.map */

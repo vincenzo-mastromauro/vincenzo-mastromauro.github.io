@@ -7,11 +7,24 @@
 */
 @use "../partials/variables";
 @use "../partials/keyframes";
+:root {
+  --windowHeight: calc(100vh / 1);
+  --windowWidth: calc(100vw / 1);
+}
+html {
+  box-sizing: border-box;
+}
 
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
   outline: variables.$outline-test;
+}
+* {
+  z-index: 1000;
 }
 html,
 body {
@@ -35,6 +48,7 @@ html {
   body {
     font-family: "Clash-Display", sans-serif;
     font-size: 16px;
+    font-weight: 400;
     background-color: variables.$color-background;
     color: variables.$color-primary;
     background-repeat: repeat;
@@ -50,6 +64,14 @@ html {
       position: fixed;
       top: -100%;
       width: 300%;
+    }
+    i {
+      font-style: normal;
+      color: variables.$color-secondary;
+    }
+    a {
+      text-decoration: none;
+      color: variables.$color-primary;
     }
   }
 }
