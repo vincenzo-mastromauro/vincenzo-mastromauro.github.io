@@ -10,136 +10,175 @@
   <body>
     <header>
       <div>
+        <a href="#">home</a>
         <a href="#">work</a>
         <a href="#">profile</a>
         <a href="#">contacts</a>
       </div>
     </header>
-    <main>
-      <div class="wrapper">
-        <div class="container">
-          <section id="home" class="panel p1 watch">
+ 
+    <main class="wrapper">
+      <div class="container">
+        <div class="panel p1">
+          <div class="panelContentContainer">
             <p>
-              <span>CURRENTLY</span><img src="/images/dot.svg" alt="dot" /><span
-                >AVAILABLE</span
-              >
+              <span>CURRENTLY</span><img src="/images/dot.svg" alt="dot" /><span>AVAILABLE</span>
             </p>
             <h1>
-              i'm vincenzo <span>mastromauro</span> a frontend web<span
-                >developer</span
-              >
+              i'm vincenzo
+              <i>mastromauro</i>
+              a frontend web
+              <i>developer</i>
             </h1>
-            <a href="#">01</a>
+            <a class="pagination" href="#">01</a>
             <div class="callToAction">
               <span>Discover <br />More</span>
-              <img src="#" alt="" />
+              <img src="./images/chevron.svg" alt="chevron to right" />
             </div>
-            <div class="languageSwitch">
-              <a href="#en">en</a><span>/</span><a href="it">it</a>
+            <!-- <div class="languageSwitch"><a href="#en">en</a><span>/</span><a href="it">it</a></div> -->
+          </div>
+        </div>
+
+        <div class="panel p2">
+          <div class="panelContentContainer">
+            <div class="hero">
+              <h2>my best <i>projects</i> and selected <i>works</i></h2>
+              <img src="./images/chevron.svg" alt="chevron" />
             </div>
-            <div class="lightDarkMode">
-              <img src="#" alt="#" />
+            <div class="projectWrapper">
+              <div class="project left">
+                <p>march 2022</p>
+                <h3><a href="" class="watch">FocusedoNFT</a></h3>
+                <p>UX - UI Design _ Development _ SEO</p>
+                <p>Nft Project that helps the enviroment</p>
+              </div>
+              <div class="project right">
+                <p>june 2022</p>
+                <h3><a href="" class="watch">Dental Clinic</a></h3>
+                <p>Development</p>
+                <p>Website for a dental clinic</p>
+              </div>
+              <div class="project left">
+                <p>november 2022</p>
+                <h3 class="watch"><a class="watch" href="google.com">Swire UI</a></h3>
+                <p>UX - UI Design _ Development</p>
+                <p>Glassmorphism UI Component Library made for React</p>
+              </div>
+              <div class="project right">
+                <p>may 2020</p>
+                <h3><a href="" class="watch">Healthy Majo</a></h3>
+                <p>UX - UI Design _ WebApp - Development</p>
+                <p>Calories Tracking Web App</p>
+              </div>
+              <div class="project left">
+                <p>november 2019</p>
+                <h3><a href="" class="watch">Ethnobrera</a></h3>
+                <p>UX - UI Design _ Development _ E-Commerce</p>
+                <p>Ethnical E-commerce</p>
+              </div>
             </div>
-          </section>
-          <section id="work" class="panel p2 watch">
-            <h2>my best projects and selected works</h2>
-            <div class="project">
-              <p>march 2022</p>
-              <h3>FocusedoNFT</h3>
-              <p>UX - UI Design _ Development _ SEO</p>
-              <p>Nft Project that helps the enviroment</p>
-            </div>
-            <div class="project">
-              <p>june 2022</p>
-              <h3>Dental Clinic</h3>
-              <p>Development</p>
-              <p>Website for a dental clinic</p>
-            </div>
-            <div class="project">
-              <p>may 2020</p>
-              <h3>Healthy Majo</h3>
-              <p>UX - UI Design _ WebApp - Development</p>
-              <p>Calories Tracking Web App</p>
-            </div>
-            <div class="project">
-              <p>november 2019</p>
-              <h3>Ethnobrera</h3>
-              <p>UX - UI Design _ Development _ E-Commerce</p>
-              <p>Ethnical E-commerce</p>
-            </div>
-            <a href="#">01</a>
+            <a class="pagination" href="#">02</a>
             <div class="callToAction">
-              <span>Discover <br />More</span>
-              <img src="#" alt="" />
+              <img src="./images/chevron.svg" alt="chevron" />
             </div>
-          </section>
-          <section id="profile" class="panel p3 watch">
-            <h2>i'd like to introduce myself</h2>
-            <div>
-              <p>based in <span>turin</span></p>
-              <p>born in <span>2002</span></p>
+          </div>
+        </div>
+
+        <div class="panel p3">
+          <div class="panelContentContainer">
+            <div class="hero">
+              <h2>Just so you know <i>who</i> <i>I</i> <i>am</i></h2>
+              <img src="./images/chevron.svg" alt="chevron" />
             </div>
-            <div>
-              <p><span>C</span>reative</p>
-              <img src="#" alt="." />
-              <p><span>C</span>urious</p>
-              <img src="#" alt="." />
-              <p><span>P</span>recise</p>
+            <div class="subHero">
+              <p>
+                Based in<br />
+                <span class="watch">Turin, It</span>
+              </p>
+              <img src="./images/dot.svg" alt="" />
+              <p>Born in <br /><span class="watch">2002</span></p>
             </div>
-            <div>
-              <h3>The <span>Education</span></h3>
-              <div>
-                <div>Diploma of higher education Web Developer</div>
+            <div class="adjectives">
+              <p><span class="watch">C</span>reative</p>
+              <img src="./images/dot.svg" alt="." />
+              <p><span class="watch">C</span>urious</p>
+              <img src="./images/dot.svg" alt="." />
+              <p><span class="watch">P</span>recise</p>
+            </div>
+            <div class="education">
+              <h3>
+                The
+                <p class="watch">Education</p>
+              </h3>
+              <div class="ed1">
+                <span>Diploma of higher education <i>Web Developer</i></span>
+                <img src="./images/dot.svg" alt="." />
                 <span>2021 - 2023</span>
               </div>
-              <div>
+              <div class="ed2">
+                <span>High School Diploma <i>Computer Science</i></span>
+                <img src="./images/dot.svg" alt="." />
                 <span>2016 - 2020</span>
-                <div>High School Diploma Computer Science</div>
               </div>
             </div>
-            <div>
+            <!-- <div class="ceritfication">
               <h3>The <span>Certifications</span></h3>
-              <!-- TODO -->
-            </div>
-            <div>
-              <h3>My <span>Hard Skills</span></h3>
-              <p>
-                <span>HTML _ CSS _ JS</span><img src="#" alt="#" /><span
-                  >reactJS</span
-                ><img src="#" alt="#" /><span>angularJS</span>
-              </p>
-              <p>
-                <span>UX _ UI</span><img src="#" alt="#" /><span
-                  >design thinking</span
-                ><img src="#" alt="#" /><span>figma</span>
-              </p>
-              <p>
-                <span>SEO _ SEM _ SEA</span><img src="#" alt="#" /><span
-                  >git versioning</span
-                >
-              </p>
+              <p>todo</p>
+            </div> -->
+            <div class="hardSkills">
+              <h3>
+                My
+                <p class="watch">Hard Skills</p>
+              </h3>
+              <div class="skillsWrapper">
+                <p>
+                  <span>HTML _ CSS _ JS</span><img src="./images/dot.svg" alt="#" /><span
+                    >reactJS</span
+                  ><img src="./images/dot.svg" alt="#" /><span>angularJS</span>
+                </p>
+                <p>
+                  <span>UX _ UI</span><img src="./images/dot.svg" alt="#" /><span
+                    >design thinking</span
+                  ><img src="./images/dot.svg" alt="#" /><span>figma</span>
+                </p>
+                <p>
+                  <span>SEO _ SEM _ SEA</span><img src="./images/dot.svg" alt="#" /><span
+                    >git versioning</span
+                  >
+                </p>
+              </div>
             </div>
             <a href="#">01</a>
             <div class="callToAction">
-              <span>Discover <br />More</span>
-              <img src="#" alt="" />
+              <img src="./images/chevron.svg" alt="" />
             </div>
-          </section>
-          <section id="contacts" class="panel p4 last watch">
-            <h2>let's work together</h2>
-            <a href="#">vincenzo.mastromauro@icloud.com</a>
-            <div>
-              <a href="#">linkedin</a><a href="">github</a><a href="">phone</a>
+          </div>
+        </div>
+
+        <div class="panel p4 last">
+          <div class="panelContentContainer">
+
+            <div class="hero">
+              <h2>Let's work <i>together</i></h2>
             </div>
-            <a href="#">01</a>
-            <div class="callToAction reverse">
-              <img src="#" alt="" />
-              <span>Discover <br />More</span>
-            </div>
-          </section>
+            <a href="">vincenzo.mastromauro@icloud.com</a>
+            <div class="socials">
+              <a href="" target="_blank"
+                >LinkedIn</a
+              >
+              <img src="./images/dot.svg" alt="">
+              <a href="" target="_blank"
+                >GitHub</a
+              >
+              <img src="./images/dot.svg" alt="">
+              <a href="" target="_blank"
+                >Phone</a
+              >
+          </div>
+           
         </div>
       </div>
-    </main>
+    </div>
     <!-- <footer>
           <p>test-footer</p>
           <img src="#" alt="foooooter" />

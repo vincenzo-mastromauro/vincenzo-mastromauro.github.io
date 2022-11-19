@@ -9,7 +9,7 @@ let callback = function (items) {
     }
   });
 };
-let observer = new IntersectionObserver(callback, { threshold: 0.5 });
+let observer = new IntersectionObserver(callback, { threshold: 1 });
 elementsToWatch.forEach((element) => {
   observer.observe(element);
 });

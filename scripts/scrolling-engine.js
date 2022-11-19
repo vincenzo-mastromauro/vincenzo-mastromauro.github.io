@@ -11,24 +11,40 @@ triggerPanels.forEach(function (panel, i) {
       xPercent: -(100 * (i + 1)),
       immediateRender: false,
       ease: "none",
+
       scrollTrigger: {
         trigger: panel,
         id: "panel-" + i,
+
         start: () => "bottom bottom",
-        end: () => "+=" + document.querySelector(".panel").offsetWidth,
-        pin: ".container",
-        pinnedContainer: ".container",
-        scrub: 0.2, // Change this for a "smoother transition" effect
+        end: () => "+=" + window.innerWidth,
+
+        pin: ".wrapper",
+        pinnedContainer: ".wrapper",
+
+        scrub: true,
+
+        onEnter: function () {
+          console.log("enter tween " + (i + 1));
+        },
+        onLeave: function () {
+          console.log("leave tween " + (i + 1));
+        },
+        onEnterBack: function () {
+          console.log("enterBack tween " + (i + 1));
+        },
+        onLeaveBack: function () {
+          console.log("leaveBack tween " + (i + 1));
+        },
       },
     }
   );
 });
 
 ScrollTrigger.addEventListener("refresh", clear);
+
 function clear() {
-  if (
-    document.documentElement.scrollTop < ScrollTrigger.getById("panel-0").start
-  ) {
+  if (document.documentElement.scrollTop < ScrollTrigger.getById("panel-0").start) {
     gsap.set(allPanels, { clearProps: "xPercent" });
   }
 }
