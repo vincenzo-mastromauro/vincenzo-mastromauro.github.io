@@ -10,18 +10,17 @@
   <body>
     <header>
       <div>
-        <a href="#">home</a>
-        <a href="#">work</a>
-        <a href="#">profile</a>
-        <a href="#">contacts</a>
+        <a href="#home">home</a>
+        <a href="#work">work</a>
+        <a href="#profile">profile</a>
+        <a href="#contacts">contacts</a>
       </div>
     </header>
- 
     <main class="wrapper">
       <div class="container">
-        <div class="panel p1">
+        <div class="panel p1" id="home">
           <div class="panelContentContainer">
-            <p>
+            <p class="availability">
               <span>CURRENTLY</span><img src="/images/dot.svg" alt="dot" /><span>AVAILABLE</span>
             </p>
             <h1>
@@ -30,7 +29,7 @@
               a frontend web
               <i>developer</i>
             </h1>
-            <a class="pagination" href="#">01</a>
+            <p class="pagination">01</p>
             <div class="callToAction">
               <span>Discover <br />More</span>
               <img src="./images/chevron.svg" alt="chevron to right" />
@@ -39,56 +38,64 @@
           </div>
         </div>
 
-        <div class="panel p2">
+        <div class="panel p2" id="work">
           <div class="panelContentContainer">
             <div class="hero">
-              <h2>my best <i>projects</i> and selected <i>works</i></h2>
-              <img src="./images/chevron.svg" alt="chevron" />
+              <h2 class="watch">my best <i>projects</i> and selected <i>works</i></h2>
             </div>
+            <p class="pagination">02</p>
             <div class="projectWrapper">
-              <div class="project left">
+              <div class="project left watch">
                 <p>march 2022</p>
-                <h3><a href="" class="watch">FocusedoNFT</a></h3>
+                <h3>
+                  <a href="focusedonft.github.io" target="_blank" rel="noreferrer" class="watch"
+                    >FocusedoNFT</a
+                  >
+                </h3>
                 <p>UX - UI Design _ Development _ SEO</p>
                 <p>Nft Project that helps the enviroment</p>
               </div>
-              <div class="project right">
+              <div class="project right watch">
                 <p>june 2022</p>
-                <h3><a href="" class="watch">Dental Clinic</a></h3>
+                <h3><a href="ivaniuc.com" class="watch">Dental Clinic</a></h3>
                 <p>Development</p>
                 <p>Website for a dental clinic</p>
               </div>
-              <div class="project left">
+              <div class="project left watch">
                 <p>november 2022</p>
-                <h3 class="watch"><a class="watch" href="google.com">Swire UI</a></h3>
+                <h3 class="watch">
+                  <a class="watch" target="_blank" rel="noreferrer" href="swireui.github.io"
+                    >Swire UI</a
+                  >
+                </h3>
                 <p>UX - UI Design _ Development</p>
                 <p>Glassmorphism UI Component Library made for React</p>
               </div>
-              <div class="project right">
+              <div class="project right watch">
                 <p>may 2020</p>
-                <h3><a href="" class="watch">Healthy Majo</a></h3>
+                <h3>
+                  <a href="#home" target="_blank" rel="noreferrer" class="watch">Healthy Majo</a>
+                </h3>
                 <p>UX - UI Design _ WebApp - Development</p>
                 <p>Calories Tracking Web App</p>
               </div>
-              <div class="project left">
+              <div class="project left watch">
                 <p>november 2019</p>
-                <h3><a href="" class="watch">Ethnobrera</a></h3>
+                <h3><a href="ethnotorino.com" class="watch">Ethnobrera</a></h3>
                 <p>UX - UI Design _ Development _ E-Commerce</p>
                 <p>Ethnical E-commerce</p>
               </div>
             </div>
-            <a class="pagination" href="#">02</a>
             <div class="callToAction">
-              <img src="./images/chevron.svg" alt="chevron" />
+              <img class="chevronNoBg" src="./images/chevron-no-bg.svg" alt="chevron" />
             </div>
           </div>
         </div>
 
-        <div class="panel p3">
+        <div class="panel p3" id="profile">
           <div class="panelContentContainer">
             <div class="hero">
-              <h2>Just so you know <i>who</i> <i>I</i> <i>am</i></h2>
-              <img src="./images/chevron.svg" alt="chevron" />
+              <h2 class="watch">Just so you know <i>who</i> <i>I</i> <i>am</i></h2>
             </div>
             <div class="subHero">
               <p>
@@ -110,12 +117,12 @@
                 The
                 <p class="watch">Education</p>
               </h3>
-              <div class="ed1">
+              <div class="ed1 watch">
                 <span>Diploma of higher education <i>Web Developer</i></span>
                 <img src="./images/dot.svg" alt="." />
                 <span>2021 - 2023</span>
               </div>
-              <div class="ed2">
+              <div class="ed2 watch">
                 <span>High School Diploma <i>Computer Science</i></span>
                 <img src="./images/dot.svg" alt="." />
                 <span>2016 - 2020</span>
@@ -148,44 +155,37 @@
                 </p>
               </div>
             </div>
-            <a href="#">01</a>
+            <p class="pagination">03</p>
             <div class="callToAction">
-              <img src="./images/chevron.svg" alt="" />
+              <img class="chevronNoBg" src="./images/chevron-no-bg.svg" alt="" />
             </div>
           </div>
         </div>
 
-        <div class="panel p4 last">
+        <div class="panel p4 last" id="contacts">
           <div class="panelContentContainer">
-
             <div class="hero">
-              <h2>Let's work <i>together</i></h2>
+              <h2 class="watch">Let's work <i>together</i></h2>
             </div>
-            <a href="">vincenzo.mastromauro@icloud.com</a>
+            <p class="pagination">04</p>
+            <a href="mailto:vincenzo.mastromauro@icloud.com">vincenzo.mastromauro@icloud.com</a>
+            <h3>Find Me On</h3>
             <div class="socials">
-              <a href="" target="_blank"
+              <a href="https://www.linkedin.com/in/vincenzo-mastromauro/" target="_blank"
                 >LinkedIn</a
               >
-              <img src="./images/dot.svg" alt="">
-              <a href="" target="_blank"
-                >GitHub</a
-              >
-              <img src="./images/dot.svg" alt="">
-              <a href="" target="_blank"
-                >Phone</a
-              >
+              <img src="./images/dot.svg" alt="separator" />
+              <a href="https://github.com/vincenzo-mastromauro" target="_blank">GitHub</a>
+              <img src="./images/dot.svg" alt="separator" />
+              <a href="tel:+393889768057" target="_blank">Phone</a>
+            </div>
           </div>
-           
         </div>
       </div>
-    </div>
-    <!-- <footer>
-          <p>test-footer</p>
-          <img src="#" alt="foooooter" />
-        </footer> -->
+    </main>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="/scripts/scrolling-engine.js"></script>
+    <script src="/scripts/animations.js" type="text/javascript"></script>
   </body>
-  <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-  <script src="/scripts/scrolling-engine.js"></script>
-  <script src="/scripts/animations.js" type="text/javascript"></script>
 </html>

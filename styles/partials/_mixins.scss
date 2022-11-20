@@ -26,14 +26,10 @@
     color: variables.$color-background;
     background-color: variables.$color-primary;
     &:hover {
-      box-shadow: 1px 1px 0px variables.$color-primary,
-        2px 2px 0px variables.$color-primary,
-        3px 3px 0px variables.$color-primary,
-        4px 4px 0px variables.$color-primary,
-        5px 5px 0px variables.$color-primary,
-        6px 6px 0px variables.$color-primary,
-        7px 7px 0px variables.$color-primary,
-        8px 8px 0px variables.$color-primary,
+      box-shadow: 1px 1px 0px variables.$color-primary, 2px 2px 0px variables.$color-primary,
+        3px 3px 0px variables.$color-primary, 4px 4px 0px variables.$color-primary,
+        5px 5px 0px variables.$color-primary, 6px 6px 0px variables.$color-primary,
+        7px 7px 0px variables.$color-primary, 8px 8px 0px variables.$color-primary,
         9px 9px 0px variables.$color-primary;
     }
   }
@@ -59,16 +55,24 @@
 /*  @block Flexbox
 /*-----------------------------------*/
 
-@mixin flexbox(
-  $gap: 2%,
-  $justifyContent: center,
-  $alignItems: center,
-  $flexDirection: row
-) {
+@mixin flexbox($gap: 2%, $justifyContent: center, $alignItems: center, $flexDirection: row) {
   display: flex;
   flex-wrap: wrap;
   flex-direction: $flexDirection;
   align-items: $alignItems;
   justify-content: $justifyContent;
   gap: $gap;
+}
+
+@mixin animation(
+  $animationName,
+  $animationDuration: 1s,
+  $animationTimingFunction: variables.$best-timing-function,
+  $animationDelay: 0s,
+  $animationIterationCount: 1,
+  $animationDirection: normal,
+  $animationFillMode: forwards
+) {
+  animation: $animationName $animationDuration $animationTimingFunction $animationDelay
+    $animationIterationCount $animationDirection $animationFillMode;
 }

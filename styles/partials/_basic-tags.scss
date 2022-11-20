@@ -54,6 +54,7 @@ html {
     background-repeat: repeat;
     opacity: 1;
     word-wrap: break-word;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     &::after {
       animation: grain 8s steps(10) infinite;
       background-image: url("/images/noise.png");

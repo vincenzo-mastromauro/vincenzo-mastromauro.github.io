@@ -1,0 +1,45 @@
+@use "../partials/variables";
+
+.project.watch,
+.ed1.watch {
+  transform: translateX(5%);
+  opacity: 0.5;
+  transition: variables.$best-transition;
+}
+.project.visible,
+.ed1.visible {
+  transform: translateX(0);
+  opacity: 1;
+  transition: variables.$best-transition;
+}
+.project.left.watch,
+.ed2.watch {
+  transform: translateX(-5%);
+  opacity: 0.5;
+  transition: variables.$best-transition;
+}
+.project.left.visible,
+.ed2.visible {
+  transform: translateX(0);
+  opacity: 1;
+  transition: variables.$best-transition;
+}
+a.watch,
+span.watch,
+p.watch {
+  transition: variables.$best-transition;
+}
+a.visible,
+span.visible,
+p.visible {
+  color: variables.$color-secondary !important;
+  transition: variables.$best-transition;
+}
+h2.watch {
+  opacity: 0.5;
+  transition: variables.$best-transition;
+}
+h2.visible {
+  opacity: 1;
+  transition: variables.$best-transition;
+}
